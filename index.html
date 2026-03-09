@@ -176,7 +176,7 @@
 
   .hero-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(52px, 8vw, 96px);
+    font-size: clamp(40px, 8vw, 96px);
     font-weight: 800;
     line-height: 0.95;
     letter-spacing: -3px;
@@ -861,19 +861,79 @@
 
   /* MOBILE */
   @media (max-width: 900px) {
-    nav { padding: 20px 24px; }
+    /* CURSOR */
+    .cursor, .cursor-ring { display: none; }
+    body { cursor: auto; }
+
+    /* NAV */
+    nav { padding: 16px 20px; }
     .nav-links { display: none; }
-    .hero { padding: 120px 24px 60px; }
+    .nav-logo { font-size: 15px; }
+
+    /* HERO */
+    .hero { padding: 110px 20px 60px; min-height: auto; }
     .hero-visual { display: none; }
-    .stats-bar { padding: 0 24px; margin-top: 40px; }
+    .hero-name { font-size: clamp(42px, 11vw, 72px); letter-spacing: -1px; }
+    .hero-title { font-size: 16px; }
+    .hero-desc { font-size: 13px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .btn-primary { padding: 14px 28px; font-size: 12px; }
+    .availability { font-size: 10px; }
+
+    /* STATS */
+    .stats-bar { padding: 0 20px; margin-top: 32px; margin-bottom: 60px; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    section { padding: 80px 24px; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .certs-grid { grid-template-columns: 1fr; }
-    .project-card { grid-template-columns: 1fr; }
+    .stat-item { padding: 20px 16px; border-right: 1px solid var(--border); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+    .stat-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+    .stat-number { font-size: 32px; }
+    .stat-label { font-size: 10px; }
+
+    /* SECTIONS */
+    section { padding: 60px 20px; }
+    .section-title { font-size: clamp(28px, 8vw, 44px); letter-spacing: -1px; margin-bottom: 36px; }
+
+    /* PROJECTS */
+    .project-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 20px; }
     .project-number { display: none; }
-    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+    .project-name { font-size: 20px; }
+    .project-desc { font-size: 13px; }
+    .project-links { flex-direction: row; align-items: center; justify-content: flex-start; gap: 16px; }
+
+    /* SKILLS */
+    .skills-grid { grid-template-columns: 1fr; gap: 2px; }
+    .skill-group { padding: 28px 20px; }
+    .skill-bar { width: 60px; }
+
+    /* CERTS */
+    .certs-grid { grid-template-columns: 1fr; gap: 2px; }
+    .cert-card { padding: 24px 20px; gap: 16px; }
+    .cert-icon { width: 48px; height: 48px; font-size: 20px; }
+    .cert-name { font-size: 14px; }
+
+    /* ABOUT */
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-detail-item { font-size: 12px; flex-wrap: wrap; gap: 4px; }
+    .detail-value { text-align: right; }
+
+    /* CONTACT */
+    .contact-section { padding: 60px 20px; }
+    .contact-email { font-size: clamp(16px, 5vw, 28px); word-break: break-all; margin-bottom: 32px; }
+    .contact-links { flex-direction: column; align-items: center; gap: 12px; }
+    .contact-link { width: 100%; justify-content: center; padding: 14px 20px; }
+
+    /* FOOTER */
+    footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; font-size: 10px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: clamp(36px, 12vw, 56px); }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    nav { padding: 14px 16px; }
+    section { padding: 50px 16px; }
+    .hero { padding: 100px 16px 50px; }
+    .stats-bar { padding: 0 16px; }
   }
 </style>
 </head>
@@ -1188,7 +1248,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2025 Anil Kumar Chowdary Poka</span>
+  <span>© 2026 Anil Chowdary Poka</span>
   <span>Built for the cloud. Deployed with passion.</span>
 </footer>
 
