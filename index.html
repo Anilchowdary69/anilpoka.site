@@ -816,8 +816,8 @@
 
   /* SCROLL REVEAL */
   .reveal {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.8s ease;
   }
 
@@ -1240,9 +1240,17 @@
         }, i * 80);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.01, rootMargin: "0px 0px -30px 0px" });
 
   reveals.forEach(el => observer.observe(el));
+
+  // Fallback: show all content after 1.5s
+  setTimeout(() => {
+    reveals.forEach(el => {
+      el.classList.add("visible");
+      el.querySelectorAll(".skill-bar-fill").forEach(bar => bar.classList.add("animate"));
+    });
+  }, 1500);
 
   // Smooth nav links
   document
