@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'Courier New', monospace">
+  <!-- Background -->
+  <rect width="900" height="520" fill="#0d1117" rx="12"/>
+  
+  <!-- Grid lines subtle -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2332" stroke-width="0.5"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4af0b4"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4a9ef0"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f0a44a"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" fill="url(#grid)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#4af0b4" font-size="13" font-weight="bold" letter-spacing="4" filter="url(#glow)">anilpoka.site — AWS INFRASTRUCTURE</text>
+  <line x1="200" y1="48" x2="700" y2="48" stroke="#4af0b4" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- ── USER ── -->
+  <g transform="translate(60, 210)">
+    <rect x="0" y="0" width="100" height="80" rx="8" fill="#0d1117" stroke="#4af0b4" stroke-width="1.5" filter="url(#glow)"/>
+    <!-- Person icon -->
+    <circle cx="50" cy="22" r="12" fill="none" stroke="#4af0b4" stroke-width="1.5"/>
+    <path d="M25,55 Q50,38 75,55" fill="none" stroke="#4af0b4" stroke-width="1.5"/>
+    <text x="50" y="72" text-anchor="middle" fill="#4af0b4" font-size="10" font-weight="bold">USER</text>
+  </g>
+
+  <!-- Arrow: User → Route53 -->
+  <line x1="160" y1="250" x2="218" y2="250" stroke="#4af0b4" stroke-width="1.5" marker-end="url(#arrow-green)" stroke-dasharray="4,2"/>
+  <text x="189" y="243" text-anchor="middle" fill="#4af0b4" font-size="8" opacity="0.7">HTTPS</text>
+
+  <!-- ── ROUTE 53 ── -->
+  <g transform="translate(220, 210)">
+    <rect x="0" y="0" width="110" height="80" rx="8" fill="#0d1117" stroke="#f0a44a" stroke-width="1.5"/>
+    <!-- Route53 icon - circular arrows -->
+    <circle cx="55" cy="28" r="16" fill="none" stroke="#f0a44a" stroke-width="1.5"/>
+    <path d="M55,14 A14,14 0 0,1 69,28" fill="none" stroke="#f0a44a" stroke-width="2" marker-end="url(#arrow-orange)"/>
+    <path d="M55,42 A14,14 0 0,1 41,28" fill="none" stroke="#f0a44a" stroke-width="2" marker-end="url(#arrow-orange)"/>
+    <text x="55" y="58" text-anchor="middle" fill="#f0a44a" font-size="9" font-weight="bold">Route 53</text>
+    <text x="55" y="70" text-anchor="middle" fill="#f0a44a" font-size="8" opacity="0.7">DNS Routing</text>
+  </g>
+
+  <!-- Arrow: Route53 → CloudFront -->
+  <line x1="330" y1="250" x2="388" y2="250" stroke="#4af0b4" stroke-width="1.5" marker-end="url(#arrow-green)" stroke-dasharray="4,2"/>
+  <text x="359" y="243" text-anchor="middle" fill="#4af0b4" font-size="8" opacity="0.7">Alias</text>
+
+  <!-- ── CLOUDFRONT ── -->
+  <g transform="translate(390, 190)">
+    <rect x="0" y="0" width="130" height="120" rx="8" fill="#0d1117" stroke="#4a9ef0" stroke-width="2" filter="url(#glow)"/>
+    <!-- CloudFront icon - globe/cloud -->
+    <circle cx="65" cy="38" r="20" fill="none" stroke="#4a9ef0" stroke-width="1.5"/>
+    <ellipse cx="65" cy="38" rx="10" ry="20" fill="none" stroke="#4a9ef0" stroke-width="1" opacity="0.6"/>
+    <line x1="45" y1="38" x2="85" y2="38" stroke="#4a9ef0" stroke-width="1" opacity="0.6"/>
+    <line x1="47" y1="26" x2="83" y2="26" stroke="#4a9ef0" stroke-width="1" opacity="0.4"/>
+    <line x1="47" y1="50" x2="83" y2="50" stroke="#4a9ef0" stroke-width="1" opacity="0.4"/>
+    <text x="65" y="72" text-anchor="middle" fill="#4a9ef0" font-size="9" font-weight="bold">CloudFront</text>
+    <text x="65" y="84" text-anchor="middle" fill="#4a9ef0" font-size="8" opacity="0.7">CDN + HTTPS</text>
+    <text x="65" y="96" text-anchor="middle" fill="#4a9ef0" font-size="8" opacity="0.7">Edge Cache</text>
+    <text x="65" y="110" text-anchor="middle" fill="#4a9ef0" font-size="7" opacity="0.5">E3OYSBOMWV1N02</text>
+  </g>
+
+  <!-- Arrow: CloudFront → S3 -->
+  <line x1="520" y1="250" x2="578" y2="250" stroke="#4af0b4" stroke-width="1.5" marker-end="url(#arrow-green)" stroke-dasharray="4,2"/>
+  <text x="549" y="243" text-anchor="middle" fill="#4af0b4" font-size="8" opacity="0.7">OAC</text>
+
+  <!-- ── S3 ── -->
+  <g transform="translate(580, 210)">
+    <rect x="0" y="0" width="110" height="80" rx="8" fill="#0d1117" stroke="#4af0b4" stroke-width="1.5"/>
+    <!-- S3 icon - bucket shape -->
+    <ellipse cx="55" cy="20" rx="22" ry="8" fill="none" stroke="#4af0b4" stroke-width="1.5"/>
+    <line x1="33" y1="20" x2="33" y2="44" stroke="#4af0b4" stroke-width="1.5"/>
+    <line x1="77" y1="20" x2="77" y2="44" stroke="#4af0b4" stroke-width="1.5"/>
+    <path d="M33,44 Q55,52 77,44" fill="none" stroke="#4af0b4" stroke-width="1.5"/>
+    <text x="55" y="62" text-anchor="middle" fill="#4af0b4" font-size="9" font-weight="bold">S3 Bucket</text>
+    <text x="55" y="74" text-anchor="middle" fill="#4af0b4" font-size="8" opacity="0.7">Static Hosting</text>
+  </g>
+
+  <!-- ── ACM ── (below CloudFront) -->
+  <g transform="translate(390, 350)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#0d1117" stroke="#b44af0" stroke-width="1.5"/>
+    <!-- Lock icon -->
+    <rect x="45" y="26" width="40" height="28" rx="4" fill="none" stroke="#b44af0" stroke-width="1.5"/>
+    <path d="M50,26 Q50,14 65,14 Q80,14 80,26" fill="none" stroke="#b44af0" stroke-width="1.5"/>
+    <circle cx="65" cy="38" r="4" fill="#b44af0"/>
+    <text x="65" y="62" text-anchor="middle" fill="#b44af0" font-size="9" font-weight="bold">ACM Certificate</text>
+  </g>
+
+  <!-- Arrow: ACM → CloudFront (vertical) -->
+  <line x1="455" y1="350" x2="455" y2="312" stroke="#b44af0" stroke-width="1.5" marker-end="url(#arrow-orange)" stroke-dasharray="4,2"/>
+  <text x="475" y="335" fill="#b44af0" font-size="8" opacity="0.7">SSL/TLS</text>
+
+  <!-- ── WAF ── (above CloudFront) -->
+  <g transform="translate(390, 90)">
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#0d1117" stroke="#f04a4a" stroke-width="1.5"/>
+    <!-- Shield icon -->
+    <path d="M65,14 L82,22 L82,40 Q65,52 48,40 L48,22 Z" fill="none" stroke="#f04a4a" stroke-width="1.5"/>
+    <text x="65" y="42" text-anchor="middle" fill="#f04a4a" font-size="14" font-weight="bold">✓</text>
+    <text x="65" y="58" text-anchor="middle" fill="#f04a4a" font-size="9" font-weight="bold">AWS WAF</text>
+  </g>
+
+  <!-- Arrow: WAF → CloudFront (vertical) -->
+  <line x1="455" y1="160" x2="455" y2="190" stroke="#f04a4a" stroke-width="1.5" marker-end="url(#arrow-orange)" stroke-dasharray="4,2"/>
+  <text x="468" y="178" fill="#f04a4a" font-size="8" opacity="0.7">Web ACL</text>
+
+  <!-- ── GITHUB ACTIONS ── -->
+  <g transform="translate(700, 140)">
+    <rect x="0" y="0" width="140" height="90" rx="8" fill="#0d1117" stroke="#e0e0e0" stroke-width="1.5"/>
+    <!-- GitHub octocat simplified -->
+    <circle cx="70" cy="30" r="18" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+    <circle cx="70" cy="27" r="8" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+    <path d="M55,42 Q50,54 58,58" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+    <path d="M85,42 Q90,54 82,58" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+    <text x="70" y="68" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="bold">GitHub Actions</text>
+    <text x="70" y="80" text-anchor="middle" fill="#e0e0e0" font-size="8" opacity="0.7">CI/CD Pipeline</text>
+  </g>
+
+  <!-- Arrow: GitHub Actions → S3 -->
+  <line x1="700" y1="200" x2="660" y2="248" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#arrow-green)" stroke-dasharray="4,2"/>
+  <text x="695" y="235" text-anchor="middle" fill="#e0e0e0" font-size="8" opacity="0.7">s3 cp</text>
+
+  <!-- Arrow: GitHub Actions → CloudFront invalidation -->
+  <line x1="700" y1="210" x2="522" y2="248" stroke="#e0e0e0" stroke-width="1" marker-end="url(#arrow-green)" stroke-dasharray="3,3" opacity="0.5"/>
+  <text x="610" y="218" text-anchor="middle" fill="#e0e0e0" font-size="8" opacity="0.5">invalidate /*</text>
+
+  <!-- ── TERRAFORM ── -->
+  <g transform="translate(700, 310)">
+    <rect x="0" y="0" width="140" height="90" rx="8" fill="#0d1117" stroke="#7b4af0" stroke-width="1.5"/>
+    <!-- Terraform diamond icon -->
+    <polygon points="70,14 90,35 70,56 50,35" fill="none" stroke="#7b4af0" stroke-width="1.5"/>
+    <polygon points="70,24 82,35 70,46 58,35" fill="#7b4af0" opacity="0.3"/>
+    <text x="70" y="70" text-anchor="middle" fill="#7b4af0" font-size="9" font-weight="bold">Terraform</text>
+    <text x="70" y="82" text-anchor="middle" fill="#7b4af0" font-size="8" opacity="0.7">Infrastructure as Code</text>
+  </g>
+
+  <!-- Arrow: Terraform manages all (dashed line to CloudFront) -->
+  <line x1="700" y1="355" x2="522" y2="310" stroke="#7b4af0" stroke-width="1" marker-end="url(#arrow-green)" stroke-dasharray="3,3" opacity="0.6"/>
+  <text x="615" y="348" text-anchor="middle" fill="#7b4af0" font-size="8" opacity="0.7">manages all resources</text>
+
+  <!-- ── LEGEND ── -->
+  <g transform="translate(30, 430)">
+    <text x="0" y="12" fill="#555" font-size="9" letter-spacing="2">LEGEND</text>
+    <!-- Request flow -->
+    <line x1="0" y1="28" x2="30" y2="28" stroke="#4af0b4" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-green)"/>
+    <text x="36" y="32" fill="#888" font-size="9">Request Flow</text>
+    <!-- SSL -->
+    <line x1="120" y1="28" x2="150" y2="28" stroke="#b44af0" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="156" y="32" fill="#888" font-size="9">SSL / Security</text>
+    <!-- CI/CD -->
+    <line x1="260" y1="28" x2="290" y2="28" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="296" y="32" fill="#888" font-size="9">CI/CD Deploy</text>
+    <!-- IaC -->
+    <line x1="390" y1="28" x2="420" y2="28" stroke="#7b4af0" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="426" y="32" fill="#888" font-size="9">IaC Management</text>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="450" y="505" text-anchor="middle" fill="#333" font-size="9" letter-spacing="1">Managed with Terraform · Deployed via GitHub Actions · Hosted on AWS</text>
+</svg>

@@ -7,13 +7,9 @@
 ---
 
 ## Architecture
+---
 
-```
-User → Route 53 (DNS) → CloudFront (CDN + HTTPS) → S3 (Static Hosting)
-                              ↑
-                         ACM Certificate (SSL)
-                         WAF (Web ACL Security)
-```
+![Architecture](./architecture.svg)
 
 ---
 
@@ -29,25 +25,6 @@ User → Route 53 (DNS) → CloudFront (CDN + HTTPS) → S3 (Static Hosting)
 | Terraform | Infrastructure as Code |
 | GitHub Actions | CI/CD — auto deploy on push to main |
 
----
-
-## Repository Structure
-
-```
-anilpoka.site/
-├── index.html                        # Portfolio website
-├── terraform/
-│   ├── main.tf                       # All AWS resources
-│   ├── variables.tf                  # Input variables
-│   ├── outputs.tf                    # Output values
-│   ├── import.sh                     # One-time import script
-│   └── .gitignore                    # Excludes .terraform cache
-└── .github/
-    └── workflows/
-        └── deploy.yml                # Auto-deploy on push
-```
-
----
 
 ## CI/CD Pipeline
 
