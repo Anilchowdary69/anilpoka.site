@@ -140,6 +140,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .sk-services{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
 .sk-services span{font-family:var(--mono);font-size:9px;padding:2px 7px;background:rgba(74,240,180,.05);border:1px solid rgba(74,240,180,.15);color:var(--accent);letter-spacing:.3px;}
 
+/* EXPERIENCE */
+.exp-wrap{display:flex;flex-direction:column;gap:2px;}
+.exp-card{position:relative;background:var(--surface);border:1px solid var(--border);padding:36px 44px;transition:border-color .3s,background .3s;overflow:hidden;}
+.exp-card:hover{border-color:rgba(74,240,180,.18);background:var(--surface2);}
+.exp-accent{position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2));transform:scaleY(0);transform-origin:top;transition:transform .4s ease;}
+.exp-card:hover .exp-accent{transform:scaleY(1);}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:8px;}
+.exp-title{font-size:18px;font-weight:700;color:var(--text);}
+.exp-type{font-family:var(--mono);font-size:10px;padding:3px 9px;border:1px solid rgba(74,240,180,.25);color:var(--accent);letter-spacing:.5px;}
+.exp-meta{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
+.exp-company{font-family:var(--mono);font-size:12px;color:var(--accent2);letter-spacing:.5px;}
+.exp-loc{font-size:12px;color:var(--muted);}
+.exp-date{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.5px;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.exp-bullets li{font-size:13px;line-height:1.8;color:var(--muted2);padding-left:18px;position:relative;}
+.exp-bullets li::before{content:'▹';position:absolute;left:0;color:var(--accent);font-size:14px;}
+.exp-bullets li strong{color:var(--text);font-weight:600;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.exp-tags span{font-family:var(--mono);font-size:9px;padding:2px 7px;background:rgba(74,240,180,.05);border:1px solid rgba(74,240,180,.15);color:var(--accent);letter-spacing:.3px;}
+@media(max-width:900px){.exp-card{padding:24px 20px;}.exp-header{flex-direction:column;}}
+
 /* CERTS */
 .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
 .cert-card{background:var(--surface);border:1px solid var(--border);padding:36px;display:flex;gap:20px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .3s;}
@@ -211,24 +232,24 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
 <nav>
   <a href="#" class="logo">anil<span>poka</span>.site</a>
   <ul class="navlinks">
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certs</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <a href="mailto:anilpoka69@gmail.com" class="nav-cta">Hire Me</a>
+  <a href="mailto:anilpoka96@gmail.com" class="nav-cta">Hire Me</a>
 </nav>
 
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-left">
-    <div class="hero-tag"><span class="pulse"></span>&nbsp;Available for full-time roles</div>
+    <div class="hero-tag"><span class="pulse"></span>&nbsp;4+ Years in DevOps &amp; Cloud Engineering</div>
     <div class="hero-role">// Cloud &amp; DevOps Engineer</div>
     <h1 class="hero-name">Anil<br><em>Chowdary<br>Poka</em></h1>
-    <p class="hero-desc"><strong>AWS Certified</strong> engineer building production infrastructure on <strong>Terraform</strong>, shipping with <strong>CI/CD pipelines</strong>, and designing multi-cloud systems with automatic failover.</p>
+    <p class="hero-desc"><strong>AWS Certified Solutions Architect</strong> with professional experience at <strong>PowerSchool</strong> and <strong>Philips</strong>. Building and managing production AWS infrastructure with <strong>Terraform</strong>, shipping through <strong>GitHub Actions CI/CD</strong>, and running containerized workloads on <strong>EKS</strong> across healthcare and EdTech platforms.</p>
     <div class="hero-actions">
-      <a href="#projects" class="btn-fill">View Projects &rarr;</a>
+      <a href="#experience" class="btn-fill">View Experience &rarr;</a>
       <a href="https://github.com/Anilchowdary69" target="_blank" rel="noopener noreferrer" class="btn-out">
         <svg viewBox="0 0 16 16" width="15" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         GitHub
@@ -241,12 +262,12 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
       <div class="term-body">
         <div><span class="tc">{</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"name"</span><span class="tc">:</span> <span class="ts">"Anil Chowdary Poka"</span><span class="tc">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"role"</span><span class="tc">:</span> <span class="ts">"Cloud &amp; DevOps Eng."</span><span class="tc">,</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"role"</span><span class="tc">:</span> <span class="ts">"DevOps &amp; Cloud Engineer"</span><span class="tc">,</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"cert"</span><span class="tc">:</span> <span class="ts">"AWS SAA-C03"</span><span class="tc">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"gpa"</span><span class="tc">:</span> <span class="tv">3.8</span><span class="tc">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"iac"</span><span class="tc">:</span> <span class="ts">"Terraform"</span><span class="tc">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"cicd"</span><span class="tc">:</span> <span class="ts">"GitHub Actions"</span><span class="tc">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"clouds"</span><span class="tc">: [</span><span class="ts">"AWS"</span><span class="tc">,</span><span class="ts">"Azure"</span><span class="tc">],</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"experience"</span><span class="tc">:</span> <span class="ts">"4+ years"</span><span class="tc">,</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"current"</span><span class="tc">:</span> <span class="ts">"PowerSchool"</span><span class="tc">,</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"previous"</span><span class="tc">:</span> <span class="ts">"Philips"</span><span class="tc">,</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"stack"</span><span class="tc">: [</span><span class="ts">"Terraform"</span><span class="tc">,</span><span class="ts">"GitHub Actions"</span><span class="tc">,</span><span class="ts">"Docker"</span><span class="tc">,</span><span class="ts">"EKS"</span><span class="tc">],</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"status"</span><span class="tc">:</span> <span class="tv">"open_to_work"</span></div>
         <div><span class="tc">}</span></div>
       </div>
@@ -255,57 +276,77 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
 </section>
 
 <div class="statsbar">
-  <div class="sitem"><div class="sval">3</div><div class="slbl">Live Projects</div></div>
-  <div class="sitem"><div class="sval">25+</div><div class="slbl">AWS Resources</div></div>
-  <div class="sitem"><div class="sval">2</div><div class="slbl">Cloud Providers</div></div>
+  <div class="sitem"><div class="sval">4+</div><div class="slbl">Years Experience</div></div>
+  <div class="sitem"><div class="sval">60M+</div><div class="slbl">Users Supported</div></div>
+  <div class="sitem"><div class="sval">3</div><div class="slbl">Companies</div></div>
   <div class="sitem"><div class="sval">2</div><div class="slbl">Certifications</div></div>
 </div>
 <div class="div"></div>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="sec-sup reveal">Featured Work</div>
-  <h2 class="sec-h reveal">Projects</h2>
-  <div class="proj-wrap">
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="sec-sup reveal">Professional Background</div>
+  <h2 class="sec-h reveal">Experience</h2>
+  <div class="exp-wrap">
 
-    <div class="proj reveal">
-      <div class="proj-accent"></div><div class="proj-no">01</div>
-      <div>
-        <div class="proj-cat">Serverless &bull; Data Pipeline &bull; IaC</div>
-        <div class="proj-title">AWS Stock Market Data Pipeline</div>
-        <p class="proj-desc">Real-time pipeline ingesting live market data through AWS Kinesis Streams, processing events with Lambda functions, persisting structured records to DynamoDB and raw files to S3, and enabling SQL analytics via Athena. Automated SNS alerts fire on price threshold breaches. 100% Terraform IaC with CloudWatch dashboards for full observability.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Kinesis</span><span class="tag">Lambda</span><span class="tag">DynamoDB</span><span class="tag">S3</span><span class="tag">Athena</span><span class="tag">SNS</span><span class="tag">CloudWatch</span><span class="tag">Terraform</span><span class="tag">IAM</span></div>
+    <div class="exp-card reveal">
+      <div class="exp-accent"></div>
+      <div class="exp-header">
+        <div class="exp-title">DevOps Engineer</div>
+        <span class="exp-type">Contract</span>
       </div>
-      <div class="proj-btns">
-        <a class="plink" href="https://github.com/Anilchowdary69/AWS-Stock-Market-Pipeline" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
+      <div class="exp-meta">
+        <span class="exp-company">PowerSchool</span>
+        <span class="exp-loc">USA</span>
+        <span class="exp-date">November 2024 &ndash; Present</span>
       </div>
+      <ul class="exp-bullets">
+        <li>Provisioned and managed AWS infrastructure (<strong>EC2, S3, RDS, Lambda, ALB</strong>) using <strong>Terraform</strong> and <strong>CloudFormation</strong> for PowerSchool&rsquo;s K-12 SaaS platform serving 60M+ students, configured new customer environments, managed Terraform remote state and locking, and enforced IAM least-privilege access across 4 AWS accounts.</li>
+        <li>Owned CI/CD pipeline operations using <strong>GitHub Actions</strong> for 6 product engineering teams, automated build, test, and deployment workflows with artifact versioning, integrated automated testing gates that blocked 30+ failed builds from reaching production monthly.</li>
+        <li>Managed containerized application workloads using <strong>Docker</strong> and <strong>Ansible</strong> across 12 microservices, configured autoscaling and health checks to ensure 99.9% uptime during peak enrollment traffic, and collaborated with development and QA teams through Agile SDLC release cycles.</li>
+        <li>Monitored infrastructure health using <strong>CloudWatch</strong> metrics, alarms, and centralized log groups across 15+ services, performed root cause analysis and documented 10+ incident postmortems per quarter, and participated in on-call rotations handling customer-impacting outages.</li>
+      </ul>
+      <div class="exp-tags"><span>AWS</span><span>Terraform</span><span>CloudFormation</span><span>GitHub Actions</span><span>Docker</span><span>Ansible</span><span>CloudWatch</span><span>IAM</span><span>EKS</span><span>RDS</span></div>
     </div>
 
-    <div class="proj reveal">
-      <div class="proj-accent"></div><div class="proj-no">02</div>
-      <div>
-        <div class="proj-cat">CI/CD &bull; GitHub Actions &bull; Test Automation</div>
-        <div class="proj-title">AWS Stock Market CI/CD Pipeline</div>
-        <p class="proj-desc">Full CI/CD automation with GitHub Actions that runs pytest (5 test cases) then deploys infrastructure to AWS on every push. Remote Terraform state in S3 backend ensures the pipeline always reconciles existing resources. Zero manual steps from code commit to production deployment.</p>
-        <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Terraform</span><span class="tag">Python</span><span class="tag">pytest</span><span class="tag">Lambda</span><span class="tag">Kinesis</span><span class="tag">DynamoDB</span><span class="tag">S3 State</span><span class="tag">IAM</span></div>
+    <div class="exp-card reveal">
+      <div class="exp-accent"></div>
+      <div class="exp-header">
+        <div class="exp-title">DevOps Engineer</div>
+        <span class="exp-type">Full-Time</span>
       </div>
-      <div class="proj-btns">
-        <a class="plink" href="https://github.com/Anilchowdary69/AWS-StockMarket-CICD-Pipeline" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
+      <div class="exp-meta">
+        <span class="exp-company">Philips</span>
+        <span class="exp-loc">Bangalore, India</span>
+        <span class="exp-date">August 2021 &ndash; June 2023</span>
       </div>
+      <ul class="exp-bullets">
+        <li>Provisioned and managed AWS environments (<strong>EC2, S3, EKS, RDS, Lambda</strong>) using <strong>Terraform</strong> across 4 healthcare product accounts, enforced IAM least-privilege policies and maintained <strong>ISMS/QMS compliance</strong> to meet healthcare regulatory requirements.</li>
+        <li>Built and maintained CI/CD workflows in <strong>GitHub Actions</strong> with self-hosted runners on AWS for 5 development squads, automated build, test, and deployment pipelines with pre-merge testing gates that blocked broken code from reaching production.</li>
+        <li>Deployed containerized healthcare microservices on <strong>Amazon EKS</strong> using Docker, configured liveness and readiness probes for pod health monitoring, managed autoscaling policies, and supported 3 to 4 production releases per sprint.</li>
+        <li>Investigated and resolved 50+ production incidents across multi-account AWS environments, wrote root cause analysis documents and postmortems, and refined <strong>CloudWatch</strong> alarms and log filters that cut false-positive alerts by roughly half.</li>
+      </ul>
+      <div class="exp-tags"><span>AWS</span><span>Terraform</span><span>GitHub Actions</span><span>Docker</span><span>EKS</span><span>CloudWatch</span><span>IAM</span><span>ISMS/QMS</span><span>Python</span></div>
     </div>
 
-    <div class="proj reveal">
-      <div class="proj-accent"></div><div class="proj-no">03</div>
-      <div>
-        <div class="proj-cat">Multi-Cloud &bull; Disaster Recovery &bull; Live</div>
-        <div class="proj-title">Multi-Cloud Weather App &amp; Auto Failover</div>
-        <p class="proj-desc">Weather app deployed in parallel on AWS (S3 + CloudFront) and Azure (Blob Storage). Route 53 health checks poll CloudFront every 30 seconds and automatically reroute traffic to Azure within 60 seconds of any AWS failure. Full Terraform IaC across both providers, custom domain with SSL, live in production.</p>
-        <div class="tags"><span class="tag">AWS S3</span><span class="tag">CloudFront</span><span class="tag">Route 53</span><span class="tag">ACM</span><span class="tag">Azure Blob</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span><span class="tag">JavaScript</span><span class="tag">DNS Failover</span></div>
+    <div class="exp-card reveal">
+      <div class="exp-accent"></div>
+      <div class="exp-header">
+        <div class="exp-title">Cloud Operations Engineer</div>
+        <span class="exp-type">Intern</span>
       </div>
-      <div class="proj-btns">
-        <a class="plink live" href="https://www.anil-weatherapp.online" target="_blank" rel="noopener noreferrer"><span class="liveDot"></span> Live Demo</a>
-        <a class="plink" href="https://github.com/Anilchowdary69/AWS-Azure-Weather-App" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
+      <div class="exp-meta">
+        <span class="exp-company">Philips</span>
+        <span class="exp-loc">Bangalore, India</span>
+        <span class="exp-date">December 2020 &ndash; July 2021</span>
       </div>
+      <ul class="exp-bullets">
+        <li>Provisioned and managed AWS infrastructure (<strong>EC2, S3, RDS</strong>) using <strong>Terraform</strong> for Philips healthcare imaging platform, reducing manual setup time from 2+ hours to under 30 minutes per environment.</li>
+        <li>Maintained CI/CD pipelines for 3 healthcare applications, troubleshot build failures, enforced artifact versioning, and validated deployments across staging and production before every release.</li>
+        <li>Configured <strong>CloudWatch</strong> dashboards, alarms, and centralized log groups across 4 AWS accounts, enabling the operations team to detect service degradations 30% faster during peak hours.</li>
+        <li>Automated weekly resource tagging audits, log rotation, and health check reports using <strong>Python</strong> and <strong>Bash</strong> scripts, saving the team roughly 6 hours of manual effort per week.</li>
+      </ul>
+      <div class="exp-tags"><span>AWS</span><span>Terraform</span><span>CloudWatch</span><span>Python</span><span>Bash</span><span>CI/CD</span><span>IAM</span><span>Linux</span></div>
     </div>
 
   </div>
@@ -319,84 +360,75 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
   <div class="sk-evidence">
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">Terraform</div><div class="sk-category">Infrastructure as Code</div></div>
+      <div class="sk-left"><div class="sk-name">Cloud Platform</div><div class="sk-category">AWS</div></div>
       <div class="sk-proof">
-        Provisioned <strong>25+ AWS &amp; Azure resources</strong> across all 3 projects — S3, Lambda, Kinesis, DynamoDB, CloudFront, Route 53, ACM, Azure Blob — from scratch using HCL. Remote state in S3 backend used in CI/CD pipelines.
-        <div class="sk-services"><span>EC2</span><span>VPC</span><span>IAM</span><span>S3</span><span>Lambda</span><span>DynamoDB</span><span>CloudFront</span><span>Route 53</span><span>ACM</span><span>Azure Blob</span></div>
+        Production experience managing <strong>multi-account AWS environments</strong> at PowerSchool and Philips. Core services include EC2, S3, RDS, Lambda, EKS, ALB, Route 53, CloudWatch, Systems Manager, Secrets Manager, and IAM.
+        <div class="sk-services"><span>EC2</span><span>S3</span><span>RDS</span><span>Lambda</span><span>EKS</span><span>ALB</span><span>Route 53</span><span>CloudWatch</span><span>IAM</span><span>Secrets Manager</span><span>Systems Manager</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span><span class="sk-badge p2">Project 2</span><span class="sk-badge p3">Project 3</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">GitHub Actions CI/CD</div><div class="sk-category">DevOps &amp; Automation</div></div>
+      <div class="sk-left"><div class="sk-name">Infrastructure as Code</div><div class="sk-category">IaC &amp; Configuration</div></div>
       <div class="sk-proof">
-        Built <strong>two full CI/CD pipelines</strong> — one running pytest then deploying to AWS, one validating and deploying to both AWS &amp; Azure simultaneously. Zero manual steps from commit to cloud.
-        <div class="sk-services"><span>GitHub Actions</span><span>Git</span><span>Bash</span><span>Terraform</span><span>AWS CLI</span><span>Azure CLI</span><span>IAM Roles</span></div>
+        <strong>Terraform</strong> and <strong>CloudFormation</strong> for provisioning and managing AWS resources across multiple accounts. Remote state with S3 backend and DynamoDB locking. <strong>Ansible</strong> for configuration management across microservices.
+        <div class="sk-services"><span>Terraform</span><span>CloudFormation</span><span>Ansible</span><span>Remote State</span><span>DynamoDB Locking</span><span>HCL</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p2">Project 2</span><span class="sk-badge p3">Project 3</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">AWS Kinesis &amp; Lambda</div><div class="sk-category">Serverless &amp; Streaming</div></div>
+      <div class="sk-left"><div class="sk-name">CI/CD Pipelines</div><div class="sk-category">DevOps &amp; Automation</div></div>
       <div class="sk-proof">
-        Architected a <strong>real-time event-driven pipeline</strong> — live stock data streams through Kinesis, Lambda processes each event and writes to DynamoDB &amp; S3. No servers, no polling, fully serverless.
-        <div class="sk-services"><span>Kinesis Streams</span><span>Lambda</span><span>DynamoDB</span><span>S3</span><span>IAM</span><span>Python</span><span>Event-Driven</span></div>
+        Owned <strong>GitHub Actions</strong> CI/CD pipelines with self-hosted runners on AWS. Automated build, test, and deployment workflows with artifact versioning, pre-merge testing gates, and rollback strategies for multiple engineering teams.
+        <div class="sk-services"><span>GitHub Actions</span><span>Self-Hosted Runners</span><span>Git</span><span>Artifact Versioning</span><span>Rollback Strategies</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span><span class="sk-badge p2">Project 2</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">Multi-Cloud Architecture</div><div class="sk-category">AWS &amp; Microsoft Azure</div></div>
+      <div class="sk-left"><div class="sk-name">Containers &amp; Orchestration</div><div class="sk-category">Docker &amp; Kubernetes</div></div>
       <div class="sk-proof">
-        Deployed production app <strong>simultaneously on AWS and Azure</strong>. Route 53 health checks auto-failover DNS from CloudFront to Azure Blob Storage within <strong>60 seconds</strong> of any AWS outage — zero human intervention.
-        <div class="sk-services"><span>AWS S3</span><span>CloudFront</span><span>Route 53</span><span>Azure Blob</span><span>DNS Failover</span><span>High Availability</span><span>Disaster Recovery</span></div>
+        Deployed and managed containerized microservices using <strong>Docker</strong> on <strong>Amazon EKS</strong>. Configured liveness and readiness probes, horizontal pod autoscaling, health checks, and managed releases with <strong>Helm</strong> charts.
+        <div class="sk-services"><span>Docker</span><span>EKS</span><span>Kubernetes</span><span>Helm</span><span>Autoscaling</span><span>Health Checks</span><span>Probes</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p3">Project 3</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">Python &amp; pytest</div><div class="sk-category">Programming &amp; Testing</div></div>
+      <div class="sk-left"><div class="sk-name">Monitoring &amp; Observability</div><div class="sk-category">Metrics, Logs &amp; Alerts</div></div>
       <div class="sk-proof">
-        Wrote all <strong>Lambda business logic in Python</strong> — data ingestion, transformation, DynamoDB writes. Built pytest suite with 5 unit tests that run automatically in CI/CD before every deployment.
-        <div class="sk-services"><span>Python 3</span><span>pytest</span><span>Boto3</span><span>Bash scripting</span><span>Linux</span><span>Unit Testing</span></div>
+        Configured <strong>CloudWatch</strong> dashboards, alarms, and centralized log groups across multi-account AWS environments. Experience with <strong>Prometheus</strong> and <strong>Grafana</strong> for metrics collection and visualization. Tuned alerting to reduce false positives during on-call rotations.
+        <div class="sk-services"><span>CloudWatch</span><span>Prometheus</span><span>Grafana</span><span>Centralized Logging</span><span>Alerting</span><span>Dashboards</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span><span class="sk-badge p2">Project 2</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">S3, CloudFront &amp; ACM</div><div class="sk-category">Hosting, CDN &amp; SSL</div></div>
+      <div class="sk-left"><div class="sk-name">Scripting &amp; Programming</div><div class="sk-category">Python, Bash &amp; Linux</div></div>
       <div class="sk-proof">
-        Configured <strong>static hosting with global CDN</strong>, custom domains, free SSL via ACM, HTTPS redirect, cache invalidation on every deploy — used across two separate production domains live today.
-        <div class="sk-services"><span>S3</span><span>CloudFront</span><span>ACM / SSL</span><span>Route 53</span><span>HTTPS</span><span>Cache Invalidation</span><span>Custom Domain</span></div>
+        Wrote <strong>Python</strong> and <strong>Bash</strong> automation scripts for cloud operations tasks including resource tagging audits, log rotation, health check reporting, and deployment automation. Strong <strong>Linux system administration</strong> skills.
+        <div class="sk-services"><span>Python</span><span>Bash</span><span>Linux</span><span>AWS CLI</span><span>Automation</span><span>Scripting</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p2">Project 2</span><span class="sk-badge p3">Project 3</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">Route 53 &amp; Networking</div><div class="sk-category">DNS, VPC &amp; Availability</div></div>
+      <div class="sk-left"><div class="sk-name">Security &amp; Compliance</div><div class="sk-category">IAM, DevSecOps &amp; Healthcare</div></div>
       <div class="sk-proof">
-        Configured <strong>health-check-based DNS failover</strong> — primary A record to CloudFront, secondary CNAME to Azure, 30-second polling, 60-second TTL. Also configured VPC, subnets, and security groups for EC2 and Lambda deployments.
-        <div class="sk-services"><span>Route 53</span><span>VPC</span><span>EC2</span><span>Security Groups</span><span>Subnets</span><span>DNS</span><span>Health Checks</span></div>
+        Enforced <strong>IAM least-privilege access</strong>, security group policies, and resource tagging standards across multi-account AWS setups. Maintained <strong>ISMS/QMS compliance</strong> for healthcare regulatory requirements at Philips. Experience with <strong>AWS Secrets Manager</strong>.
+        <div class="sk-services"><span>IAM</span><span>Secrets Manager</span><span>Security Groups</span><span>ISMS/QMS</span><span>Least Privilege</span><span>VPC Networking</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span><span class="sk-badge p3">Project 3</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
     <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">CloudWatch, SNS &amp; IAM</div><div class="sk-category">Monitoring, Alerts &amp; Security</div></div>
+      <div class="sk-left"><div class="sk-name">Incident Management</div><div class="sk-category">RCA &amp; Operations</div></div>
       <div class="sk-proof">
-        Built <strong>CloudWatch dashboards and metric alarms</strong> for the stock pipeline. SNS triggers automated price alerts. IAM roles and policies configured with least-privilege across all 3 projects — no hardcoded credentials anywhere.
-        <div class="sk-services"><span>CloudWatch</span><span>SNS</span><span>IAM Roles</span><span>IAM Policies</span><span>Least Privilege</span><span>Alarms</span><span>Logging</span></div>
+        Investigated and resolved <strong>50+ production incidents</strong> across multi-account AWS environments. Documented root cause analyses and postmortems. Participated in <strong>on-call rotations</strong> handling customer-impacting outages. Experienced with <strong>Agile/SCRUM</strong> workflows.
+        <div class="sk-services"><span>Root Cause Analysis</span><span>Postmortems</span><span>On-Call</span><span>Incident Response</span><span>Agile</span><span>SCRUM</span></div>
       </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span><span class="sk-badge p2">Project 2</span><span class="sk-badge p3">Project 3</span></div>
-    </div>
-
-    <div class="sk-item reveal">
-      <div class="sk-left"><div class="sk-name">DynamoDB &amp; Athena</div><div class="sk-category">NoSQL &amp; Analytics</div></div>
-      <div class="sk-proof">
-        Used DynamoDB as the <strong>primary structured store</strong> for processed stock records. Raw S3 data queryable via <strong>Athena SQL</strong> — analytics on historical market data with zero database servers to manage.
-        <div class="sk-services"><span>DynamoDB</span><span>Athena</span><span>S3 Data Lake</span><span>SQL</span><span>NoSQL</span><span>Serverless DB</span></div>
-      </div>
-      <div class="sk-badges"><span class="sk-badge p1">Project 1</span></div>
+      <div class="sk-badges"><span class="sk-badge p1">PowerSchool</span><span class="sk-badge p3">Philips</span></div>
     </div>
 
   </div>
@@ -435,19 +467,17 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
   <div class="about-wrap">
     <div>
       <div class="sec-sup reveal">About Me</div>
-      <h2 class="sec-h reveal" style="margin-bottom:28px;">Building<br>the Cloud</h2>
+      <h2 class="sec-h reveal" style="margin-bottom:28px;">Engineering<br>the Cloud</h2>
       <div class="about-text reveal">
-        <p>I&rsquo;m a <strong>Cloud &amp; DevOps Engineer</strong> with a Master&rsquo;s in Computer Science from Anderson University (GPA 3.8). I build infrastructure that scales automatically, deploys itself, and recovers without human intervention.</p>
-        <p>Every project I build is fully <strong>Infrastructure as Code</strong> with Terraform, shipped via <strong>GitHub Actions CI/CD</strong>, and deployed to real AWS accounts &mdash; not simulations or sandbox environments.</p>
-        <p>Actively seeking full-time roles in <strong>Cloud Engineering</strong>, <strong>DevOps</strong>, and <strong>Site Reliability Engineering</strong>.</p>
+        <p>I&rsquo;m a <strong>DevOps &amp; Cloud Engineer</strong> with 4+ years of professional experience and a Master&rsquo;s in Computer Science from Anderson University. I build and manage production AWS infrastructure that serves millions of users across healthcare and EdTech platforms.</p>
+        <p>Currently contracted at <strong>PowerSchool</strong> managing cloud infrastructure for a K-12 SaaS platform serving 60M+ students. Previously at <strong>Philips</strong> where I owned CI/CD pipelines, ran containerized workloads on EKS, and maintained healthcare-compliant cloud environments.</p>
+        <p>Every system I manage is fully <strong>Infrastructure as Code</strong> with Terraform, shipped via <strong>GitHub Actions CI/CD</strong>, and deployed across multi-account AWS environments with proper IAM, monitoring, and incident response processes.</p>
       </div>
     </div>
     <div class="about-meta reveal">
-      <div class="meta-row"><span class="meta-k">Location</span><span class="meta-v">United States</span></div>
-      <div class="meta-row"><span class="meta-k">Degree</span><span class="meta-v">M.S. Computer Science &bull; 3.8 GPA</span></div>
-      <div class="meta-row"><span class="meta-k">University</span><span class="meta-v">Anderson University</span></div>
+      <div class="meta-row"><span class="meta-k">Location</span><span class="meta-v">Alabama, United States</span></div>
+      <div class="meta-row"><span class="meta-k">Degree</span><span class="meta-v">M.S. Computer Science</span></div>
       <div class="meta-row"><span class="meta-k">Certification</span><span class="meta-v">AWS SAA-C03</span></div>
-      <div class="meta-row"><span class="meta-k">Focus</span><span class="meta-v">Cloud &bull; DevOps &bull; SRE</span></div>
       <div class="meta-row"><span class="meta-k">Status</span><span class="meta-v open">Open to Opportunities</span></div>
     </div>
   </div>
@@ -459,7 +489,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
   <div class="sec-sup reveal" style="justify-content:center;margin-bottom:16px;">Get In Touch</div>
   <h2 class="contact-h reveal">Have a<br><span>role for me?</span></h2>
   <p class="contact-sub reveal">Let&rsquo;s build something great together.</p>
-  <a href="mailto:anilpoka69@gmail.com" class="contact-email reveal">anilpoka69@gmail.com</a>
+  <a href="mailto:anilpoka96@gmail.com" class="contact-email reveal">anilpoka96@gmail.com</a>
   <div class="contact-btns reveal">
     <a href="https://github.com/Anilchowdary69" target="_blank" rel="noopener noreferrer" class="cbtn">
       <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub
@@ -467,7 +497,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
     <a href="https://www.linkedin.com/in/anilkumarchowdarypoka/" target="_blank" rel="noopener noreferrer" class="cbtn">
       <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>LinkedIn
     </a>
-    <a href="mailto:anilpoka69@gmail.com" class="cbtn" style="border-color:rgba(74,240,180,.25);color:var(--accent);">&#x2709; Email Me</a>
+    <a href="mailto:anilpoka96@gmail.com" class="cbtn" style="border-color:rgba(74,240,180,.25);color:var(--accent);">&#x2709; Email Me</a>
   </div>
 </section>
 
@@ -490,8 +520,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;justify
   var revs=document.querySelectorAll('.reveal');
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.07});
   revs.forEach(function(el){io.observe(el);});
-  setTimeout(function(){revs.forEach(function(el){el.classList.add('in');});},900);
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
 })();
 </script>
 </body>
